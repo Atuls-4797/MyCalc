@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <!-- Toolbar Section -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- App Name -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MyCalc"
+            android:textColor="@android:color/white"
+            android:layout_gravity="center"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Calculator Section -->
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/table"
+       android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/inputTextField"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textSize="30sp"
+            android:textStyle="bold|italic"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:background="@null"/>
+
+        <!-- Output Field -->
+        <EditText
+            android:id="@+id/outputTextField"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:textSize="30sp"
+            android:textStyle="bold|italic"
+            android:gravity="end"
+            android:layout_weight="1"
+            android:background="@null"/>
+
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/linear"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:stretchColumns="*"
+        android:shrinkColumns="*"
+        android:background="@color/black">
+        <TableRow
+            android:id="@+id/row1"
+            android:layout_gravity="center"
+            android:layout_weight="0"
+            >
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:backgroundTint="#B3B3B3"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="C"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:backgroundTint="#B3B3B3"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:text="Del"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#B3B3B3"
+                android:textSize="20sp"
+                android:text="%"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textColor="@color/black"
+                android:backgroundTint="@android:color/holo_orange_dark"
+                android:textSize="20sp"
+                android:text="/"
+                android:onClick="buttonClicked"/>
+        </TableRow>
+        <TableRow
+            android:id="@+id/row2"
+            android:layout_gravity="center"
+            android:layout_weight="0">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:backgroundTint="#B3B3B3"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="7"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:backgroundTint="#B3B3B3"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:text="8"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#B3B3B3"
+                android:textSize="20sp"
+                android:text="9"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textColor="@color/black"
+                android:backgroundTint="@android:color/holo_orange_dark"
+                android:textSize="20sp"
+                android:text="X"
+                android:onClick="buttonClicked"/>
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/row3"
+            android:layout_gravity="center"
+            android:layout_weight="0">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:backgroundTint="#B3B3B3"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="4"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:backgroundTint="#B3B3B3"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:text="5"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#B3B3B3"
+                android:textSize="20sp"
+                android:text="6"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textColor="@color/black"
+                android:backgroundTint="@android:color/holo_orange_dark"
+                android:textSize="20sp"
+                android:text="-"
+                android:onClick="buttonClicked"/>
+        </TableRow>
+        <TableRow
+            android:id="@+id/row4"
+            android:layout_gravity="center"
+            android:layout_weight="0">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:backgroundTint="#B3B3B3"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="1"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:backgroundTint="#B3B3B3"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:text="2"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#B3B3B3"
+                android:textSize="20sp"
+                android:text="3"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textColor="@color/black"
+                android:backgroundTint="@android:color/holo_orange_dark"
+                android:textSize="20sp"
+                android:text="+"
+                android:onClick="buttonClicked"/>
+
+        </TableRow>
+        <TableRow
+            android:id="@+id/row5"
+            android:layout_gravity="center"
+            android:layout_weight="0">
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_span="2"
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:backgroundTint="#B3B3B3"
+                android:textSize="20sp"
+                android:textColor="@color/black"
+                android:text="0"
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textColor="@color/black"
+                android:backgroundTint="#B3B3B3"
+                android:textSize="20sp"
+                android:text=","
+                android:onClick="buttonClicked"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_height="60dp"
+                android:layout_width="60dp"
+                android:layout_margin="5dp"
+                android:insetLeft="0dp"
+                android:insetRight="0dp"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:textColor="@color/black"
+                android:backgroundTint="@android:color/holo_orange_dark"
+                android:textSize="20sp"
+                android:text="="
+                android:onClick="buttonClicked"/>
+
+
+        </TableRow>
+
+    </TableLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
